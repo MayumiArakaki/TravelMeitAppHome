@@ -5,6 +5,8 @@
 //  Created by Enrique Alata Vences on 5/12/23.
 //
 
+import CoreEntities
+
 struct MonumentsResponseDTO: Decodable {
     let pais: String
     let ciudad: String
@@ -31,5 +33,21 @@ struct MonumentsResponseDTO: Decodable {
         case medium = "Medium"
         case long = "Long"
         case image = "Image"
+    }
+}
+
+extension MonumentsResponseDTO {
+    func toDomainMonument() -> Monument {
+        return .init(
+            pais: pais,
+            ciudad: ciudad,
+            district: district,
+            latitude: latitude,
+            longitude: longitude,
+            monument: monument,
+            short: short,
+            medium: medium,
+            long: long,
+            image: image)
     }
 }

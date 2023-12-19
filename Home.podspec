@@ -35,6 +35,13 @@ TODO: Add long description of the pod here.
   s.test_spec 'IntegratedTest' do |test_spec|
     test_spec.source_files = 'Home/Tests/IntegratedTests/**/*'
   end
+
+  
+  s.test_spec 'UnitTests' do |test_spec|
+    test_spec.source_files = ['Home/Tests/UnitTests/**/*', 'Home/Tests/Mocks/**/*']
+  end
+  
+  s.dependency 'CoreEntities'
   
   # s.resource_bundles = {
   #   'Home' => ['Home/Assets/*.png']

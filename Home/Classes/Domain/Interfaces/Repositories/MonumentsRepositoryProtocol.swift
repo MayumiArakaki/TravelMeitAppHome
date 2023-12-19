@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CoreEntities
 
 protocol MonumentsRepositoryProtocol {
     func performListRequest(completion: @escaping (Result<[Monument], Error>) -> Void) -> Void
