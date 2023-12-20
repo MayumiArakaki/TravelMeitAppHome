@@ -1,16 +1,35 @@
 PODS:
-  - Home (0.1.0)
+  - CoreEntities (0.1.0)
+  - Home (0.1.0):
+    - CoreEntities
+  - Home/IntegratedTest (0.1.0):
+    - CoreEntities
+  - Home/UnitTests (0.1.0):
+    - CoreEntities
+  - SwiftLint (0.51.0)
 
 DEPENDENCIES:
+  - CoreEntities (from `../../CoreEntities`)
   - Home (from `../`)
+  - Home/IntegratedTest (from `../`)
+  - Home/UnitTests (from `../`)
+  - SwiftLint
+
+SPEC REPOS:
+  trunk:
+    - SwiftLint
 
 EXTERNAL SOURCES:
+  CoreEntities:
+    :path: "../../CoreEntities"
   Home:
     :path: "../"
 
 SPEC CHECKSUMS:
-  Home: 429e59c993fcc767a9cbafcdf3f7b2e271c54892
+  CoreEntities: 3eda844b72a17f2a91e764c16355422eea4d6772
+  Home: a7330d8d1ea5d0ebab7e4e4a4eed34784cebb563
+  SwiftLint: 1b7561918a19e23bfed960e40759086e70f4dba5
 
-PODFILE CHECKSUM: b6177c100c678b5799a4ef779a76e3fafce480ca
+PODFILE CHECKSUM: 727b7dca8f9e0f766eddac13df0b7ff5608148a2
 
 COCOAPODS: 1.12.1

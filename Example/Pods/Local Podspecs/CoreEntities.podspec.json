@@ -1,0 +1,22 @@
+{
+  "name": "CoreEntities",
+  "version": "0.1.0",
+  "summary": "A short description of CoreEntities.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/Mayumi/CoreEntities",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Mayumi": "mayumi.arakakisiccha@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/Mayumi/CoreEntities.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "10.0"
+  },
+  "source_files": "CoreEntities/Classes/**/*"
+}

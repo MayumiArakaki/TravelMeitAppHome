@@ -1,0 +1,10 @@
+included:
+- Home
+- ../Home
+
+disabled_rules:
+    - blanket_disabled_rules
+
+line_length:
+    warning: 130
+    error: 340

@@ -9,7 +9,7 @@ import XCTest
 
 @testable import Home
 
-class testMonumentsBackendTest: XCTestCase {
+class TestMonumentsBackendTest: XCTestCase {
     override func setUp() {
     }
 

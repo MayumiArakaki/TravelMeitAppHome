@@ -16,7 +16,28 @@
     "tag": "0.1.0"
   },
   "platforms": {
-    "ios": "10.0"
+    "ios": "14.0"
   },
-  "source_files": "Home/Classes/**/*"
+  "source_files": "Home/Classes/**/*",
+  "dependencies": {
+    "CoreEntities": [
+
+    ]
+  },
+  "testspecs": [
+    {
+      "name": "IntegratedTest",
+      "test_type": "unit",
+      "source_files": "Home/Tests/IntegratedTests/**/*"
+    },
+    {
+      "name": "UnitTests",
+      "test_type": "unit",
+      "source_files": [
+        "Home/Tests/UnitTests/**/*",
+        "Home/Tests/Mocks/**/*",
+        "Home/Tests/Spies/**/*"
+      ]
+    }
+  ]
 }
