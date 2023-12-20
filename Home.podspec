@@ -38,7 +38,8 @@ TODO: Add long description of the pod here.
 
   
   s.test_spec 'UnitTests' do |test_spec|
-    test_spec.source_files = ['Home/Tests/UnitTests/**/*', 'Home/Tests/Mocks/**/*']
+#    test_spec.requires_app_host = false
+    test_spec.source_files = ['Home/Tests/UnitTests/**/*', 'Home/Tests/Mocks/**/*', 'Home/Tests/Spies/**/*']
   end
   
   s.dependency 'CoreEntities'
