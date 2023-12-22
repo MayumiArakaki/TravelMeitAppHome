@@ -28,7 +28,19 @@ class HomeViewModelUnitTest: XCTestCase {
         
         viewModel.requestList()
         
+        // Verificar que se reciban datos de monumentos
         XCTAssertNotNil(viewModel.monuments)
-        XCTAssertEqual(viewModelSpy.currentState, 1)
+
+        // Verificar que el estado actual sea el esperado
+        switch viewModelSpy.currentState {
+        case .success?:
+            // Test exitoso si el estado es 'success'
+            break
+        case .loading?, .failure?:
+
+            XCTFail("Unexpected state")
+        default:
+            XCTFail("No state or unexpected state")
+        }
     }
 }

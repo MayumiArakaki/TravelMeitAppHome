@@ -5,8 +5,7 @@ platform :ios, '14.0'
 target 'Home_Example' do
   pod 'Home', :path => '../', :testspecs => ['IntegratedTest', 'UnitTests']
   pod 'CoreEntities', :path => '../../CoreEntities'
-  
-  pod 'SwiftLint'
+ 
 
   target 'Home_Tests' do
     inherit! :search_paths
