@@ -1,3 +1,4 @@
+import CoreBootcamp
 @testable import Home
 
 class HomeViewModelDelegateSpy: HomeViewModelDelegateProtocol {

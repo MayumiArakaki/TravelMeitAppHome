@@ -18,11 +18,32 @@ class MonumentDetailViewController: UIViewController {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
+    
+    private let infoLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = .white  // Texto en blanco
+        label.numberOfLines = 0  // Múltiples líneas si es necesario
+        label.textAlignment = .center
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+
+    private let infoBackgroundView: UIView = {
+        let view = UIView()
+        if let principalColor = UIColor(named: "PrincipalColor") {
+            view.backgroundColor = principalColor.withAlphaComponent(0.6)  // Azul con opacidad del 50%
+        }
+        view.layer.cornerRadius = 10
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.clipsToBounds = true
+        return view
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(backgroundImageView)
         setupBackgroundImageViewConstraints()
+        setupBackgroundViewAndLabel()
         loadBackgroundImage()
     }
 
@@ -47,4 +68,27 @@ class MonumentDetailViewController: UIViewController {
             }.resume()
         }
     }
+    
+    private func setupBackgroundViewAndLabel() {
+        view.addSubview(infoBackgroundView)
+        infoBackgroundView.addSubview(infoLabel)
+
+        NSLayoutConstraint.activate([
+            // Restricciones para infoLabel
+            infoLabel.topAnchor.constraint(equalTo: infoBackgroundView.topAnchor, constant: 10),
+            infoLabel.bottomAnchor.constraint(equalTo: infoBackgroundView.bottomAnchor, constant: -10),
+            infoLabel.leadingAnchor.constraint(equalTo: infoBackgroundView.leadingAnchor, constant: 10),
+            infoLabel.trailingAnchor.constraint(equalTo: infoBackgroundView.trailingAnchor, constant: -10),
+
+            // Restricciones para infoBackgroundView
+            infoBackgroundView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            infoBackgroundView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            infoBackgroundView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8) // 80% del ancho de la vista
+        ])
+
+        if let shortText = monument?.short {
+            infoLabel.text = shortText
+        }
+    }
+
 }

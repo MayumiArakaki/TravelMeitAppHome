@@ -18,6 +18,7 @@ class MonumentCell: UICollectionViewCell {
         // Configuración de la imagen de fondo
         mainImageView.contentMode = .scaleAspectFill
         mainImageView.clipsToBounds = true
+        mainImageView.layer.cornerRadius = 10
         contentView.addSubview(mainImageView)
         
         // Configuración del título
@@ -28,6 +29,8 @@ class MonumentCell: UICollectionViewCell {
         }
         titleLabel.textColor = .white
         titleLabel.textAlignment = .center
+        titleLabel.layer.cornerRadius = 10
+        titleLabel.clipsToBounds = true
         contentView.addSubview(titleLabel)
         
         // Activar Auto Layout

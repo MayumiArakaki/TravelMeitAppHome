@@ -43,6 +43,7 @@ TODO: Add long description of the pod here.
   end
   
   s.dependency 'CoreEntities'
+  s.dependency 'CoreBootcamp'
   
   # s.resource_bundles = {
   #   'Home' => ['Home/Assets/*.png']

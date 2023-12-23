@@ -7,6 +7,7 @@
 
 import UIKit
 import CoreEntities
+import CoreBootcamp
 
 public class HomeViewController: UIViewController {
     var homeViewModel: HomeViewModelProtocol?
@@ -172,39 +173,7 @@ extension HomeViewController: UITextFieldDelegate {
         }
     }
 }
-/*
 
-/// CollectionViewDataSource
-///
-extension HomeViewController: UICollectionViewDataSource {
-    public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return homeViewModel?.monuments?.count ?? 0
-    }
-
-    public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MonumentCell", for: indexPath) as? MonumentCell else {
-            fatalError("Unable to dequeue MonumentCell")
-        }
-        
-        // Configurar la celda con la imagen de placeholder
-        cell.configureWithPlaceholder()
-
-        if let monument = homeViewModel?.monuments?[indexPath.row] {
-            cell.configure(with: monument)
-            homeViewModel?.loadImage(from: monument.image) { image in
-                DispatchQueue.main.async {
-                    if collectionView.indexPath(for: cell) == indexPath {
-                        cell.mainImageView.image = image
-                    }
-                }
-            }
-        }
-
-        return cell
-    }
-}
-
- */
 
 /// CollectionViewDataSource
 extension HomeViewController: UICollectionViewDataSource {
@@ -234,26 +203,6 @@ extension HomeViewController: UICollectionViewDataSource {
     }
 }
 
-
-/// UIPickerViewDataSource
-extension HomeViewController: UIPickerViewDataSource {
-    public func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 2
-    }
-    
-    public func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return 10
-    }
-}
-
-extension HomeViewController: UIPickerViewDelegate {
-    public func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-            return "asasas"
-        }
-    
-    
-}
-
 extension HomeViewController: UICollectionViewDelegate {
     
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -267,19 +216,3 @@ extension HomeViewController: UICollectionViewDelegate {
         navigationController?.pushViewController(detailVC, animated: true)
     }
 }
-/*
-extension HomeViewController: UICollectionViewDelegate {
-    
-    public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        // Obtén el monumento seleccionado
-        if let selectedMonument = homeViewModel?.monuments?[indexPath.row] {
-            // Inicializa el MonumentDetailViewController con el monumento seleccionado
-            let detailVC = MonumentDetailViewController()
-            detailVC.monument = selectedMonument  // Asegúrate de que MonumentDetailViewController tenga una propiedad 'monument'
-            // Navega al MonumentDetailViewController
-            print(selectedMonument)
-            navigationController?.pushViewController(detailVC, animated: true)
-        }
-    }
-}
-*/

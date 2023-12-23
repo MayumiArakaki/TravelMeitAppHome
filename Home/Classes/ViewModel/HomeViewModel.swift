@@ -6,15 +6,10 @@
 //
 
 import CoreEntities
+import CoreBootcamp
 
 protocol HomeViewModelDelegateProtocol: AnyObject {
     func homeEvent(state: ViewControllerState)
-}
-
-enum ViewControllerState {
-    case loading
-    case success
-    case failure(Error)
 }
 
 protocol HomeViewModelProtocol {
